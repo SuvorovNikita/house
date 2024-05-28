@@ -1,0 +1,102 @@
+@use 'mixins';
+@use 'variables';
+
+:root {
+  --white: #f4f6f5;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  @include mixins.m-state-clickable;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1110px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include mixins.m-media-up(lg) {
+    grid-gap: 32px;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span #{$i};
+  }
+
+  @each $key, $value in variables.$grid-breakpoints {
+    .col-#{$key}-#{$i} {
+      grid-column: span 12;
+
+      @include mixins.m-media-up($key) {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-md-block {
+  display: none;
+
+  @include mixins.m-media-up(md) {
+    display: block;
+  }
+}
+
+.d-md-none {
+  @include mixins.m-media-up(md) {
+    display: none;
+  }
+}
+
+.d-lg-block {
+  display: none;
+
+  @include mixins.m-media-up(lg) {
+    display: block;
+  }
+}
+
+.d-lg-none {
+  @include mixins.m-media-up(lg) {
+    display: none;
+  }
+}
+
+.d-xl-block {
+  display: none;
+
+  @include mixins.m-media-up(xl) {
+    display: block;
+  }
+}
+
+.d-xl-none {
+  @include mixins.m-media-up(xl) {
+    display: none;
+  }
+}
+
+// @import 'components';

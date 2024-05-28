@@ -1,0 +1,93 @@
+@use 'variables';
+@use 'sass:map';
+
+@mixin m-media-up($breakpoint) {
+  $breakpoint: map.get(variables.$grid-breakpoints, $breakpoint);
+
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin m-media-down($breakpoint) {
+  $breakpoint: map.get(variables.$grid-breakpoints, $breakpoint);
+
+  @media (width <= calc($breakpoint - 1px)) {
+    @content;
+  }
+}
+
+@mixin m-media-between($breakpoint-from, $breakpoint-to) {
+  $breakpoint-from: map.get(variables.$grid-breakpoints, $breakpoint-from);
+  $breakpoint-to: map.get(variables.$grid-breakpoints, $breakpoint-to);
+
+  @media (min-width: $breakpoint-from) and (width <= calc($breakpoint-to - 1px)) {
+    @content;
+  }
+}
+
+@mixin m-media-h-up($breakpoint) {
+  $breakpoint: map.get(variables.$grid-breakpoints, $breakpoint);
+
+  @media (min-height: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin m-media-h-down($breakpoint) {
+  $breakpoint: map.get(variables.$grid-breakpoints, $breakpoint);
+
+  @media (height <= calc($breakpoint - 1px)) {
+    @content;
+  }
+}
+
+@mixin m-media-h-between($breakpoint-from, $breakpoint-to) {
+  $breakpoint-from: map.get(variables.$grid-breakpoints, $breakpoint-from);
+  $breakpoint-to: map.get(variables.$grid-breakpoints, $breakpoint-to);
+
+  @media (min-height: $breakpoint-from) and (height <= calc($breakpoint-to - 1px)) {
+    @content;
+  }
+}
+
+@mixin m-state-clickable() {
+  cursor: pointer;
+  user-select: none;
+}
+
+// @mixin m-animate-transition($properties...) {
+//   @if length($properties) == 0 {
+//     $properties: all;
+//   }
+
+//   @include m-media-up(md) {
+//     transition-timing-function: var(--aio-core-transition-timing-function);
+//     transition-duration: var(--aio-core-transition-duration);
+//     transition-property: $properties;
+//   }
+// }
+
+@mixin m-animate-transition($properties...) {
+  @if length($properties) == 0 {
+    $properties: all;
+  }
+
+  transition-timing-function: var(--aio-core-transition-timing-function);
+  transition-duration: var(--aio-core-transition-duration);
+  transition-property: $properties;
+}
+
+@mixin m-state-hover() {
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+
+  @media (hover: hover), all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    &:hover {
+      @content;
+    }
+  }
+}
