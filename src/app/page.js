@@ -1,7 +1,9 @@
 export default function Home() {
   return (
     <main>
-      <div className="container">123</div>
+      <header className="c-header">
+        1<div className="container"></div>
+      </header>
     </main>
   );
 }

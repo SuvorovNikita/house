@@ -3,12 +3,23 @@
 
 :root {
   --white: #f4f6f5;
+  --text-primary: #2c2d35;
+  --light-green: #d4e8d9;
+  --green: #598d66;
+  --dark-green: #376b44;
+  --dark-grayish: #86928b;
+  --light-yellow: #faeb97;
+  --yellow: #eedb6d;
+  --dark-yellow: #d9b949;
+  --card-background: #e1ede6;
+  --font-family-body: sans-serif;
 }
 
 html,
 body {
   margin: 0;
   background-color: var(--white);
+  font-family: var(--font-family-body);
 }
 
 a {
