@@ -1,0 +1,44 @@
+@use '../../styles/mixins.scss';
+
+.header {
+  background-color: var(--card-background);
+  padding: 33px 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    @include mixins.hover(var(--green), var(--dark-green));
+  }
+
+  &__link-cart {
+    display: flex;
+    align-items: center;
+    fill: var(--text-primary);
+    transition: fill 0.3s ease;
+  }
+}

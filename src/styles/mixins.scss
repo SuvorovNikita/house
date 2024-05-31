@@ -62,6 +62,16 @@
   align-items: center;
 }
 
+@mixin hover($hover-color, $active-color) {
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+}
+
 // @mixin m-animate-transition($properties...) {
 //   @if length($properties) == 0 {
 //     $properties: all;
