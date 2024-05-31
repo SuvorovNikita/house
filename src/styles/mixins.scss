@@ -56,6 +56,12 @@
   user-select: none;
 }
 
+@mixin m-flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // @mixin m-animate-transition($properties...) {
 //   @if length($properties) == 0 {
 //     $properties: all;

@@ -1,4 +1,4 @@
-import '../styles/globals.scss';
+import '@/styles/globals.scss';
 
 import localFont from 'next/font/local';
 
@@ -14,13 +14,13 @@ const fontRaleway = localFont({
     },
   ],
 
-  variable: '--aio-core-font-family-body',
+  variable: 'font-family-body',
   fallback: ['sans-serif'],
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <title>Ink. House</title>
         <link rel="shortcut icon" href="star.png" />

@@ -10,6 +10,7 @@
   --dark-grayish: #86928b;
   --light-yellow: #faeb97;
   --yellow: #eedb6d;
+  --yellow-border: #a38314;
   --dark-yellow: #d9b949;
   --card-background: #e1ede6;
   --font-family-body: sans-serif;
@@ -25,6 +26,16 @@ body {
 a {
   text-decoration: none;
   @include mixins.m-state-clickable;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
 img {
@@ -110,4 +121,4 @@ img {
   }
 }
 
-// @import 'components';
+@import 'components';

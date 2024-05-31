@@ -1,0 +1,87 @@
+@use '../../styles/mixins.scss';
+
+.button {
+  font-family: var(--font-family-body);
+  font-weight: 500;
+  font-size: 20px;
+  padding: 20px 60px;
+  height: 65px;
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  @include mixins.m-flex-center;
+  @include mixins.m-state-clickable;
+
+  &:hover {
+    background-color: var(--green);
+    color: var(--white);
+  }
+
+  &:focus {
+    background-color: var(--light-green);
+    color: var(--green);
+  }
+
+  &:active {
+    background-color: var(--dark-green);
+    color: var(--white);
+  }
+
+  &--yellow {
+    background-color: var(--yellow);
+    color: var(--text-primary);
+    border: none;
+  }
+
+  &:hover {
+    background-color: var(--light-yellow);
+    color: var(--text-primary);
+  }
+
+  &:focus {
+    background-color: var(--light-yellow);
+    color: var(--text-primary);
+    border: 1px solid var(--yellow-border);
+  }
+
+  &:active {
+    color: var(--text-primary);
+    background-color: var(--dark-yellow);
+  }
+}
+
+.button-tabs {
+  font-weight: 500;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 20px;
+  height: 43px;
+  outline: none;
+  color: var(--text-primary);
+  background-color: var(--light-green);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  @include mixins.m-flex-center;
+  @include mixins.m-state-clickable;
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--green);
+  }
+
+  &:focus {
+    border: 2px solid var(--green);
+    color: var(--text-primary);
+    background: var(--light-green);
+    width: 106px;
+  }
+
+  &:active {
+    border: none;
+    background: var(--dark-green);
+    color: var(--white);
+  }
+}
