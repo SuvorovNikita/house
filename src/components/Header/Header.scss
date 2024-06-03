@@ -1,44 +1,72 @@
 @use '../../styles/mixins.scss';
 
 .header {
+  padding: 38px 0;
   background-color: var(--card-background);
-  padding: 33px 0;
 
   &__inner {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
   }
 
-  &__logo {
-    margin-right: auto;
-  }
-
-  &__navigation {
+  &__left {
     display: flex;
     align-items: center;
   }
 
-  &__item {
-    margin-right: 60px;
+  &__right {
+    display: flex;
+    align-items: center;
+  }
 
-    &:last-child {
-      margin-right: 0;
+  &__nav {
+    margin-right: 60px;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      margin-right: 60px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__link {
+      position: relative;
+      z-index: 1;
+      outline: none;
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--text-primary);
+      transition: color 0.3s ease-in-out;
+
+      @include mixins.hover(var(--green), var(--dark-green), null);
+
+      &:focus {
+        &:after {
+          content: '';
+          position: absolute;
+          left: -6px;
+          right: -6px;
+          top: -5px;
+          bottom: -5px;
+          z-index: -1;
+          background-color: var(--light-green);
+          opacity: 1;
+        }
+      }
     }
   }
 
-  &__link {
-    font-weight: 500;
-    font-size: 20px;
-    color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
-
-    @include mixins.hover(var(--green), var(--dark-green));
-  }
-
-  &__link-cart {
-    display: flex;
-    align-items: center;
-    fill: var(--text-primary);
-    transition: fill 0.3s ease;
+  .cart svg {
+    position: relative;
+    z-index: 5;
+    stroke: var(--text-primary);
   }
 }

@@ -62,13 +62,17 @@
   align-items: center;
 }
 
-@mixin hover($hover-color, $active-color) {
+@mixin hover($hover-color, $active-color, $focus-color) {
   &:hover {
     color: $hover-color;
   }
 
   &:active {
     color: $active-color;
+  }
+
+  &:focus {
+    color: $focus-color;
   }
 }
 
