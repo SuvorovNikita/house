@@ -1,45 +1,65 @@
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import '../Header/Header.scss';
 
 import logo from '@/assets/img/logo.svg';
-import cart from '@/assets/img/cart.svg';
-import menu from '@/assets/img/menu.svg';
-import close from '@/assets/img/close.svg';
+// import cart from '@/assets/img/cart.svg';
+// import menu from '@/assets/img/menu.svg';
+// import close from '@/assets/img/close.svg';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(true);
+  };
+
   return (
     <header className="header">
       <div className="container">
         <div className="header__inner">
           <div className="header__left">
-            <Link classNameName="header__logo" href="#">
+            <Link className="logo" href="#">
               <Image src={logo} alt="Логотип" />
             </Link>
           </div>
           <div className="header__right">
-            <nav className="nav header__nav">
-              <ul className="nav__list">
+            <nav
+              className={`nav header__nav ${isMenuOpen ? 'header__nav--active' : ''}`}
+              onClick={closeMenu}
+            >
+              <ul className="list-reset nav__list">
                 <li className="nav__item">
-                  <a href="#catalog" className="nav__link">
+                  <Link href="#catalog" className="nav__link">
                     Репродукции
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav__item">
-                  <a href="#newbies" className="nav__link">
+                  <Link href="#newbies" className="nav__link">
                     Новинки
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav__item">
-                  <a href="#about" className="nav__link">
+                  <Link href="#about" className="nav__link">
                     О нас
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
-            {/* <button className="burger" aria-label="Открыть меню">
+            <button
+              className={`burger ${isMenuOpen ? 'burger--active' : ''}`}
+              aria-label="Открыть меню"
+              onClick={toggleMenu}
+            >
               <span className="burger__line"></span>
-            </button> */}
+            </button>
             <Link href="#" className="cart" aria-label="Переход в корзину">
               <svg
                 width="24"
