@@ -1,11 +1,17 @@
 @use '../../styles/mixins.scss';
 
 .header {
-  padding: 16px 0;
-  background-color: var(--color-gin);
+  padding: 16px 0 0 0;
+  background-color: var(--color-white);
+
+  @include mixins.m-media-up(sm) {
+    padding: 16px 0;
+    background-color: var(--color-gin);
+  }
 
   @include mixins.m-media-up(md) {
     padding: 31px 0;
+    background-color: var(--color-gin);
   }
 
   &__inner {
@@ -20,7 +26,7 @@
   }
 
   &__left {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     text-align: center;
 
     @include mixins.m-media-up(md) {
@@ -32,33 +38,24 @@
   &__right {
     border-top: 1px solid #c3d1c6;
     padding-top: 16px;
-    display: flex;
+    display: none;
     position: relative;
 
-    &:after {
-      display: none;
+    @include mixins.m-media-up(sm) {
+      padding-top: 16px;
+      display: flex;
+      align-items: center;
     }
 
     @include mixins.m-media-up(md) {
-      align-items: center;
-      border: none;
+      border-top: none;
       padding-top: 0;
-
-      &:after {
-        display: none;
-        content: '';
-        position: absolute;
-        left: -15px;
-        right: -15px;
-        height: 100%;
-        z-index: 0;
-        background-color: var(--color-surf);
-      }
     }
   }
 
   .nav {
     margin-right: auto;
+
     @include mixins.m-media-up(md) {
       margin-right: 60px;
       position: relative;
@@ -116,6 +113,72 @@
       }
     }
   }
+
+  .mobile-menu {
+    background-color: var(--color-gin);
+    margin: 0 -16px;
+    height: 100%;
+
+    @include mixins.m-media-up(md) {
+      display: none;
+    }
+
+    @include mixins.m-media-up(sm) {
+      display: none;
+    }
+
+    &__inner {
+      padding: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__button {
+      @include mixins.m-state-clickable;
+    }
+
+    &__content {
+      position: absolute;
+      top: 70px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-gin);
+      padding: 16px;
+      box-sizing: border-box;
+
+      transform: translate3d(-100%, 0, 0);
+      transition: transform 0.3s ease-in-out;
+      will-change: transform;
+
+      &--visible {
+        opacity: 1;
+        transform: translateX(100%);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+      }
+    }
+
+    &__item {
+      margin-bottom: 30px;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        margin-bottom: 50px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--color-shark);
+    }
+  }
 }
 
 .cart {
@@ -151,86 +214,5 @@
 
   &:active svg {
     stroke: var(--color-killarney);
-  }
-}
-
-.burger {
-  --burger-width: 20px;
-  --burger-height: 16px;
-  --burger-line-height: 2px;
-  display: none;
-  position: relative;
-  border: none;
-  padding: 0;
-  z-index: 105;
-  width: var(--burger-width);
-  height: var(--burger-height);
-  color: #4c5866;
-  background-color: transparent;
-  cursor: pointer;
-  transform: translateX(5px);
-
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: var(--burger-line-height);
-    background-color: currentColor;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: var(--burger-line-height);
-    background-color: currentColor;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    top: calc(100% - var(--burger-line-height));
-  }
-
-  &__line {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: var(--burger-line-height);
-    background-color: currentColor;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  &--active:before {
-    top: 50%;
-    transform: rotate(45deg);
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }
-  &--active:after {
-    top: 50%;
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }
-
-  &--active {
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  &__line {
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  &:focus:after {
-    opacity: 1;
   }
 }
