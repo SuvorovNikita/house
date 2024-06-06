@@ -1,55 +1,60 @@
 @use '../../styles/mixins.scss';
 
 .button {
-  font-family: var(--font-family-body);
+  display: inline-block;
   font-weight: 500;
-  font-size: 20px;
-  padding: 20px 60px;
-  height: 65px;
-  color: var(--green);
-  background-color: transparent;
-  border: 1px solid var(--green);
-  outline: none;
+  text-align: center;
+  color: var(--color-leaves);
+  border: 1px solid var(--color-leaves);
   transition: background-color 0.3s ease, color 0.3s ease;
-
-  @include mixins.m-flex-center;
+  padding: 15px 36px;
+  min-width: auto;
+  font-size: 18px;
   @include mixins.m-state-clickable;
 
+  @include mixins.m-media-up(sm) {
+    padding: 13px 43px;
+  }
+
+  @include mixins.m-media-up(md) {
+    padding: 18px 59px;
+  }
+
   &:hover {
-    background-color: var(--green);
-    color: var(--white);
+    color: var(--color-white);
+    background-color: var(--color-leaves);
   }
 
   &:focus {
-    background-color: var(--light-green);
-    color: var(--green);
+    background-color: var(--color-surf);
+    color: var(--color-leaves);
   }
 
   &:active {
-    background-color: var(--dark-green);
-    color: var(--white);
+    color: var(--color-white);
+    background-color: var(--color-killarney);
   }
 
   &--yellow {
     background-color: var(--yellow);
     color: var(--text-primary);
     border: none;
-  }
 
-  &:hover {
-    background-color: var(--light-yellow);
-    color: var(--text-primary);
-  }
+    &:hover {
+      background-color: var(--light-yellow);
+      color: var(--text-primary);
+    }
 
-  &:focus {
-    background-color: var(--light-yellow);
-    color: var(--text-primary);
-    border: 1px solid var(--yellow-border);
-  }
+    &:focus {
+      background-color: var(--light-yellow);
+      color: var(--text-primary);
+      border: 1px solid var(--yellow-border);
+    }
 
-  &:active {
-    color: var(--text-primary);
-    background-color: var(--dark-yellow);
+    &:active {
+      color: var(--text-primary);
+      background-color: var(--dark-yellow);
+    }
   }
 }
 

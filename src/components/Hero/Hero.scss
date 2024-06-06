@@ -1,0 +1,76 @@
+@use '../../styles/mixins.scss';
+
+.hero {
+  padding: 60px 0;
+
+  @include mixins.m-media-up(sm) {
+    padding: 50px 0;
+  }
+  @include mixins.m-media-up(md) {
+    padding: 35px 0;
+  }
+
+  &__inner {
+    @include mixins.m-flex-center;
+
+    @include mixins.m-media-up(sm) {
+      display: flex;
+    }
+  }
+
+  &__content {
+    @include mixins.m-media-up(sm) {
+      margin-left: 30px;
+    }
+  }
+
+  .image {
+    &__small-image {
+      display: none;
+
+      @include mixins.m-media-up(sm) {
+        display: block;
+      }
+
+      @include mixins.m-media-up(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    color: var(--color-shark);
+    margin-bottom: 20px;
+
+    span {
+      color: var(--color-leaves);
+    }
+
+    @include mixins.m-media-up(sm) {
+      font-size: 36px;
+    }
+
+    @include mixins.m-media-up(md) {
+      font-size: 40px;
+    }
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-mantle);
+    margin-bottom: 40px;
+
+    @include mixins.m-media-up(sm) {
+      font-size: 16px;
+    }
+
+    @include mixins.m-media-up(md) {
+      font-size: 18px;
+    }
+  }
+}

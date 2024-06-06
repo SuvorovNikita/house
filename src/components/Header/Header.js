@@ -94,35 +94,33 @@ const Header = () => {
                   <Image src={menu} alt="menu" />
                 </Link>
                 {isMenuOpen && (
-                  <div className="mobile-menu__overlay">
-                    <div
-                      className={`mobile-menu__content ${
-                        isMenuOpen ? 'mobile-menu__content--visible' : ''
-                      }`}
-                    >
-                      <ul className="mobile-menu__list">
-                        <li className="mobile-menu__item">
-                          <Link className="mobile-menu__link" href="#" onClick={handleMenuClose}>
-                            <Image src={close} alt="Закрыть меню" />
-                          </Link>
-                        </li>
-                        <li className="mobile-menu__item">
-                          <Link className="mobile-menu__link" href="#">
-                            Репродукции
-                          </Link>
-                        </li>
-                        <li className="mobile-menu__item">
-                          <Link className="mobile-menu__link" href="#">
-                            Новинки
-                          </Link>
-                        </li>
-                        <li className="mobile-menu__item">
-                          <Link className="mobile-menu__link" href="#">
-                            О Нас
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
+                  <div
+                    className={`mobile-menu__content ${
+                      isMenuOpen ? 'mobile-menu__content--visible' : ''
+                    }`}
+                  >
+                    <ul className="mobile-menu__list">
+                      <li className="mobile-menu__item">
+                        <Link className="mobile-menu__link" href="#" onClick={handleMenuClose}>
+                          <Image src={close} alt="Закрыть меню" />
+                        </Link>
+                      </li>
+                      <li className="mobile-menu__item">
+                        <Link className="mobile-menu__link" href="#catalog">
+                          Репродукции
+                        </Link>
+                      </li>
+                      <li className="mobile-menu__item">
+                        <Link className="mobile-menu__link" href="#newbies">
+                          Новинки
+                        </Link>
+                      </li>
+                      <li className="mobile-menu__item">
+                        <Link className="mobile-menu__link" href="#about">
+                          О Нас
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </div>

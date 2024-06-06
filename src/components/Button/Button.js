@@ -1,7 +1,7 @@
 import './Button.scss';
 
 const Button = () => {
-  return <button className="button-tabs">Продукция</button>;
+  return <button className="button">Продукция</button>;
 };
 
 export default Button;
