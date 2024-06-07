@@ -1,26 +1,45 @@
 @use '../../styles/mixins.scss';
 
 .hero {
-  padding: 60px 0;
+  padding-bottom: 60px;
 
   @include mixins.m-media-up(sm) {
-    padding: 50px 0;
+    padding-bottom: 50px;
   }
+
   @include mixins.m-media-up(md) {
-    padding: 35px 0;
+    padding-bottom: 35px;
+  }
+
+  @include mixins.m-media-up(lg) {
+    padding-bottom: 69px;
   }
 
   &__inner {
-    @include mixins.m-flex-center;
+    display: flex;
+    padding-top: 60px;
 
     @include mixins.m-media-up(sm) {
-      display: flex;
+      margin-left: 30px;
+      padding-top: 50px;
+    }
+
+    @include mixins.m-media-up(md) {
+      padding-top: 35px;
+    }
+
+    @include mixins.m-media-up(lg) {
+      padding-top: 0;
     }
   }
 
   &__content {
     @include mixins.m-media-up(sm) {
       margin-left: 30px;
+    }
+
+    @include mixins.m-media-up(lg) {
+      padding-top: 145px;
     }
   }
 
@@ -34,6 +53,26 @@
 
       @include mixins.m-media-up(md) {
         display: none;
+      }
+    }
+
+    &__mid-image {
+      display: none;
+
+      @include mixins.m-media-up(md) {
+        display: block;
+      }
+
+      @include mixins.m-media-up(lg) {
+        display: none;
+      }
+    }
+
+    &__lg-image {
+      display: none;
+
+      @include mixins.m-media-up(lg) {
+        display: block;
       }
     }
   }
@@ -55,6 +94,11 @@
 
     @include mixins.m-media-up(md) {
       font-size: 40px;
+    }
+
+    @include mixins.m-media-up(lg) {
+      font-size: 60px;
+      line-height: 110%;
     }
   }
 

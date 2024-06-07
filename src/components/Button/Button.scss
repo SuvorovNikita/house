@@ -20,6 +20,10 @@
     padding: 18px 59px;
   }
 
+  @include mixins.m-media-up(md) {
+    padding: 18px 66px;
+  }
+
   &:hover {
     color: var(--color-white);
     background-color: var(--color-leaves);
