@@ -1,7 +1,7 @@
 @use '../../styles/mixins.scss';
 
 .hero {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 
   @include mixins.m-media-up(sm) {
     padding-bottom: 50px;
@@ -12,7 +12,7 @@
   }
 
   @include mixins.m-media-up(lg) {
-    padding-bottom: 69px;
+    padding-bottom: 35px;
   }
 
   &__inner {

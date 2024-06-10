@@ -2,55 +2,72 @@
   $root: &;
 
   &__body {
-    width: 350px;
   }
 
   &__content {
     padding: 20px;
-    background-color: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-gin);
   }
 
   &__image {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   &__name {
     font-weight: 500;
-    font-size: 18px;
-    color: var(--dark-grayish);
+    font-size: 16px;
+    color: var(--color-mantle);
     margin-bottom: 10px;
+
+    @include mixins.m-media-up(md) {
+      font-size: 18px;
+    }
   }
 
   &__title {
     font-weight: 500;
-    font-size: 30px;
-    color: var(--text-primary);
-    margin-bottom: 8px;
+    font-size: 24px;
+    color: var(--color-shark);
+    margin-bottom: 10px;
+
+    @include mixins.m-media-up(md) {
+      font-size: 30px;
+    }
   }
 
   &__lithography {
     font-weight: 500;
-    font-size: 18px;
-    color: var(--text-primary);
-    margin-bottom: 30px;
+    font-size: 16px;
+    color: var(--color-shark);
+    margin-bottom: 10px;
+
+    @include mixins.m-media-up(md) {
+      font-size: 18px;
+    }
   }
 
   &__price {
     font-weight: 500;
-    font-size: 24px;
-    color: var(--green);
+    font-size: 20px;
+    color: var(--color-leaves);
     margin-bottom: 20px;
+
+    @include mixins.m-media-up(md) {
+      font-size: 24px;
+    }
   }
 
   &__button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--green);
+    border: 1px solid var(--color-leaves);
     background-color: initial;
     font-weight: 500;
     font-size: 20px;
-    color: var(--green);
+    color: var(--color-leaves);
     width: 100%;
     height: 65px;
     padding: 20px 60px;
@@ -60,18 +77,18 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      color: var(--white);
-      background-color: var(--green);
+      color: var(--color-white);
+      background-color: var(--color-leaves);
     }
 
     &:active {
-      color: var(--white);
-      background-color: var(--dark-green);
+      color: var(--color-white);
+      background-color: var(--color-killarney);
     }
 
     &:focus {
-      background-color: var(--light-green);
-      color: var(--green);
+      background-color: var(--color-surf);
+      color: var(--color-leaves);
     }
   }
 }

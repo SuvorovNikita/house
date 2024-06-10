@@ -1,0 +1,73 @@
+@use '../../styles/mixins.scss';
+
+.catalog {
+  &__inner {
+    padding-top: 20px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    color: var(--color-shark);
+    margin-bottom: 20px;
+
+    @include mixins.m-media-up(sm) {
+      margin-bottom: 0;
+    }
+
+    @include mixins.m-media-up(md) {
+      font-size: 30px;
+    }
+
+    @include mixins.m-media-up(lg) {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mixins.m-media-up(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 30px;
+
+    @include mixins.m-media-up(sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-right: 30px;
+    }
+  }
+}

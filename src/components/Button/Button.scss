@@ -63,34 +63,43 @@
 }
 
 .button-tabs {
-  font-weight: 500;
+  display: inline-block;
   border-radius: 20px;
-  border: none;
-  padding: 10px 20px;
-  height: 43px;
-  outline: none;
-  color: var(--text-primary);
-  background-color: var(--light-green);
   transition: background-color 0.3s ease, color 0.3s ease;
-
-  @include mixins.m-flex-center;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-shark);
+  background: var(--color-surf);
+  border: none;
+  width: 118px;
+  height: 41px;
   @include mixins.m-state-clickable;
 
   &:hover {
-    color: var(--white);
-    background-color: var(--green);
+    color: var(--color-white-2);
+    background-color: var(--color-leaves);
   }
 
   &:focus {
-    border: 2px solid var(--green);
-    color: var(--text-primary);
-    background: var(--light-green);
-    width: 106px;
+    border: 2px solid var(--color-leaves);
+    color: var(--color-shark);
+    background: var(--color-surf);
   }
 
   &:active {
     border: none;
     background: var(--dark-green);
     color: var(--white);
+  }
+
+  &--active {
+    background: var(--color-killarney);
+    color: var(--color-white-2);
+  }
+
+  @include mixins.m-media-up(lg) {
+    font-size: 20px;
+    width: 126px;
+    height: 43px;
   }
 }
