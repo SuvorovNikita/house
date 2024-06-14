@@ -1,12 +1,17 @@
 import Image from 'next/image';
 
-const Card = ({ src, width, height, name, title, lithography, price }) => {
+const Card = ({ src, name, title, lithography, price }) => {
   return (
     <div className="card">
       <div className="card__body">
         <div className="card__content">
           <div className="card__image">
-            <Image src={src} alt={name} width={width} height={height} layout="responsive" />
+            <Image
+              src={src}
+              alt={name}
+              style={{ width: '310px', height: 'auto' }}
+              layout="responsive"
+            />
           </div>
           <p className="card__name">{name}</p>
           <h3 className="card__title">{title}</h3>

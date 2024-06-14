@@ -10,12 +10,22 @@ import img03 from '@/assets/img/card/fr-3.png';
 import img04 from '@/assets/img/card/fr-4.png';
 import img05 from '@/assets/img/card/fr-5.png';
 import img06 from '@/assets/img/card/fr-6.png';
+import img07 from '@/assets/img/card/gr-1.png';
+import img08 from '@/assets/img/card/gr-2.png';
+import img09 from '@/assets/img/card/gr-3.png';
+import img10 from '@/assets/img/card/gr-4.png';
+import img11 from '@/assets/img/card/gr-5.png';
+import img12 from '@/assets/img/card/gr-6.png';
+import img13 from '@/assets/img/card/en-1.png';
+import img14 from '@/assets/img/card/en-2.png';
+import img15 from '@/assets/img/card/en-3.png';
+import img16 from '@/assets/img/card/en-4.png';
+import img17 from '@/assets/img/card/en-5.png';
+import img18 from '@/assets/img/card/en-6.png';
 
 const products = [
   {
     src: img01,
-    width: 310,
-    height: 500,
     name: 'Марсель Руссо',
     title: 'Охота Амура',
     lithography: 'Холст, масло (50х80)',
@@ -24,8 +34,6 @@ const products = [
   },
   {
     src: img02,
-    width: 310,
-    height: 420,
     name: 'Анри Селин',
     title: 'Дама с собачкой',
     lithography: 'Акрил, бумага (50х80)',
@@ -34,8 +42,6 @@ const products = [
   },
   {
     src: img03,
-    width: 310,
-    height: 420,
     name: 'Франсуа Дюпон',
     title: 'Процедура',
     lithography: 'Цветная литография (40х60)',
@@ -44,8 +50,6 @@ const products = [
   },
   {
     src: img04,
-    width: 310,
-    height: 420,
     name: 'Луи Детуш',
     title: 'Роза',
     lithography: 'Бумага, акрил (50х80)',
@@ -54,8 +58,6 @@ const products = [
   },
   {
     src: img05,
-    width: 310,
-    height: 420,
     name: 'Франсуа Дюпон',
     title: 'Птичья трапеза',
     lithography: 'Цветная литография (40х60)',
@@ -64,110 +66,108 @@ const products = [
   },
   {
     src: img06,
-    width: 310,
-    height: 420,
     name: 'Пьер Моранж',
     title: 'Пейзаж с рыбой',
     lithography: 'Цветная литография (40х60)',
     price: 20000,
     country: 'Франция',
   },
-  // {
-  //   imgSrc: img07,
-  //   name: 'Курт Вернер',
-  //   title: 'Над городом',
-  //   lithography: 'Цветная литография (40х60)',
-  //   price: 16000,
-  //   country: 'Германия',
-  // },
-  // {
-  //   imgSrc: img08,
-  //   name: 'Макс Рихтер',
-  //   title: 'Птенцы',
-  //   lithography: 'Холст, масло (50х80) ',
-  //   price: 14500,
-  //   country: 'Германия',
-  // },
-  // {
-  //   imgSrc: img09,
-  //   name: 'Мартин Майер',
-  //   title: 'Среди листьев',
-  //   lithography: 'Цветная литография (40х60)',
-  //   price: 20000,
-  //   country: 'Германия',
-  // },
-  // {
-  //   imgSrc: img10,
-  //   name: 'Герман Беккер',
-  //   title: 'Яркая птица',
-  //   lithography: 'Цветная литография (40х60)',
-  //   price: 13000,
-  //   country: 'Германия',
-  // },
-  // {
-  //   imgSrc: img11,
-  //   name: 'Вульф Бауэр',
-  //   title: 'Дятлы',
-  //   lithography: 'Бумага, акрил (50х80)',
-  //   price: 20000,
-  //   country: 'Германия',
-  // },
-  // {
-  //   imgSrc: img12,
-  //   name: 'Вальтер Хартманн',
-  //   title: 'Большие воды',
-  //   lithography: 'Бумага, акрил (50х80)',
-  //   price: 23000,
-  //   country: 'Германия',
-  // },
-  // {
-  //   imgSrc: img13,
-  //   name: 'Пол Смит',
-  //   title: 'Дикий зверь',
-  //   lithography: 'Цветная литография (40х60)',
-  //   price: 17500,
-  //   country: 'Англия',
-  // },
-  // {
-  //   imgSrc: img14,
-  //   name: 'Джим Уотсон',
-  //   title: 'Река и горы',
-  //   lithography: 'Акварель, бумага (50х80)',
-  //   price: 20500,
-  //   country: 'Англия',
-  // },
-  // {
-  //   imgSrc: img15,
-  //   name: 'Вальтер Хартманн',
-  //   title: 'Большие воды',
-  //   lithography: 'Бумага, акрил (50х80)',
-  //   price: 23000,
-  //   country: 'Англия',
-  // },
-  // {
-  //   imgSrc: img16,
-  //   name: 'Юджин Зиллион',
-  //   title: 'Белый попугай',
-  //   lithography: 'Цветная литография (40х60)',
-  //   price: 15500,
-  //   country: 'Англия',
-  // },
-  // {
-  //   imgSrc: img17,
-  //   name: 'Эрик Гиллман',
-  //   title: 'Ночная рыба',
-  //   lithography: 'Бумага, акрил (50х80)',
-  //   price: 12500,
-  //   country: 'Англия',
-  // },
-  // {
-  //   imgSrc: img18,
-  //   name: 'Альфред Барр',
-  //   title: 'Рыжий кот',
-  //   lithography: 'Цветная литография (40х60)',
-  //   price: 21000,
-  //   country: 'Англия',
-  // },
+  {
+    src: img07,
+    name: 'Курт Вернер',
+    title: 'Над городом',
+    lithography: 'Цветная литография (40х60)',
+    price: 16000,
+    country: 'Германия',
+  },
+  {
+    src: img08,
+    name: 'Макс Рихтер',
+    title: 'Птенцы',
+    lithography: 'Холст, масло (50х80) ',
+    price: 14500,
+    country: 'Германия',
+  },
+  {
+    src: img09,
+    name: 'Мартин Майер',
+    title: 'Среди листьев',
+    lithography: 'Цветная литография (40х60)',
+    price: 20000,
+    country: 'Германия',
+  },
+  {
+    src: img10,
+    name: 'Герман Беккер',
+    title: 'Яркая птица',
+    lithography: 'Цветная литография (40х60)',
+    price: 13000,
+    country: 'Германия',
+  },
+  {
+    src: img11,
+    name: 'Вульф Бауэр',
+    title: 'Дятлы',
+    lithography: 'Бумага, акрил (50х80)',
+    price: 20000,
+    country: 'Германия',
+  },
+  {
+    src: img12,
+    name: 'Вальтер Хартманн',
+    title: 'Большие воды',
+    lithography: 'Бумага, акрил (50х80)',
+    price: 23000,
+    country: 'Германия',
+  },
+  {
+    src: img13,
+    name: 'Пол Смит',
+    title: 'Дикий зверь',
+    lithography: 'Цветная литография (40х60)',
+    price: 17500,
+    country: 'Англия',
+  },
+  {
+    src: img14,
+    name: 'Джим Уотсон',
+    title: 'Река и горы',
+    lithography: 'Акварель, бумага (50х80)',
+    price: 20500,
+    country: 'Англия',
+  },
+  {
+    src: img15,
+    name: 'Вальтер Хартманн',
+    title: 'Большие воды',
+    lithography: 'Бумага, акрил (50х80)',
+    price: 23000,
+    country: 'Англия',
+  },
+  {
+    src: img16,
+    name: 'Юджин Зиллион',
+    title: 'Белый попугай',
+    lithography: 'Цветная литография (40х60)',
+    price: 15500,
+    country: 'Англия',
+  },
+  {
+    src: img17,
+    name: 'Эрик Гиллман',
+    title: 'Ночная рыба',
+    lithography: 'Бумага, акрил (50х80)',
+    price: 12500,
+    country: 'Англия',
+  },
+  {
+    src: img18,
+    name: 'Альфред Барр',
+    title: 'Рыжий кот',
+    lithography: 'Цветная литография (40х60)',
+    price: 21000,
+    country: 'Англия',
+  },
 ];
 
 const Catalog = () => {

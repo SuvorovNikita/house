@@ -13,19 +13,6 @@
     margin-bottom: 20px;
   }
 
-  &__product {
-    &:nth-child(2) {
-    }
-
-    &:nth-child(3) {
-    }
-
-    &:nth-child(4) {
-    }
-    &:nth-child(5) {
-    }
-  }
-
   &__title {
     font-weight: 500;
     font-size: 24px;
@@ -43,7 +30,6 @@
 
     @include mixins.m-media-up(lg) {
       font-size: 40px;
-      margin-bottom: 0;
     }
   }
 
@@ -67,11 +53,15 @@
   }
 
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 30px;
 
+    @include mixins.m-media-up(md) {
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
     @include mixins.m-media-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
