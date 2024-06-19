@@ -60,18 +60,25 @@
     }
   }
 
+  &__content {
+    margin-bottom: 60px;
+  }
+
   &__desc {
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
     color: #fff;
-    margin-bottom: 30px;
-    max-width: 540px;
+    max-width: 520px;
     width: 100%;
 
     @include mixins.m-media-up(md) {
       font-size: 18px;
       line-height: 150%;
+    }
+
+    &--top {
+      margin-bottom: 30px;
     }
   }
 }

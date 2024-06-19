@@ -15,7 +15,7 @@ const Newbies = () => {
           </div>
 
           <div className="newbies__content">
-            <p className="newbies__desc">
+            <p className="newbies__desc newbies__desc--top">
               Сложно сказать, почему акционеры крупнейших компаний призывают нас к новым свершениям,
               которые, в свою очередь, должны быть заблокированы в рамках своих собственных
               рациональных ограничений.
