@@ -10,6 +10,7 @@
   padding: 15px 36px;
   min-width: auto;
   font-size: 18px;
+
   @include mixins.m-state-clickable;
 
   @include mixins.m-media-up(sm) {
@@ -40,24 +41,39 @@
   }
 
   &--yellow {
-    background-color: var(--yellow);
-    color: var(--text-primary);
+    background-color: var(--color-sand);
+    color: var(--color-shark);
     border: none;
+    width: 218px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
-      background-color: var(--light-yellow);
-      color: var(--text-primary);
+      background-color: var(--color-corn);
+      color: var(--color-shark);
     }
 
     &:focus {
-      background-color: var(--light-yellow);
-      color: var(--text-primary);
-      border: 1px solid var(--yellow-border);
+      background-color: var(--color-corn);
+      color: var(--color-shark);
+      border: 1px solid var(--color-mandalay);
     }
 
     &:active {
-      color: var(--text-primary);
-      background-color: var(--dark-yellow);
+      color: var(--color-shark);
+      background-color: var(--color-anzac);
+    }
+
+    @include mixins.m-media-up(md) {
+      width: 190px;
+      height: 50px;
+      padding: 0;
+    }
+    @include mixins.m-media-up(lg) {
+      width: 257px;
+      height: 65px;
+      padding: 0;
     }
   }
 }

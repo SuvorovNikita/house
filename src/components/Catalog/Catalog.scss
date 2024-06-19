@@ -1,8 +1,17 @@
 @use '../../styles/mixins.scss';
 
 .catalog {
-  &__inner {
-    padding-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  @include mixins.m-media-up(sm) {
+    padding-bottom: 25px;
+    padding-top: 15px;
+  }
+
+  @include mixins.m-media-up(md) {
+    padding-bottom: 35px;
+    padding-top: 35px;
   }
 
   &__top {

@@ -1,0 +1,77 @@
+@use '../../styles/mixins.scss';
+
+.newbies {
+  padding-top: 30px;
+
+  @include mixins.m-media-up(sm) {
+    padding-top: 25px;
+  }
+
+  @include mixins.m-media-up(md) {
+    padding-top: 35px;
+  }
+
+  &__bg {
+    background-image: url('../../assets/img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+
+    @include mixins.m-media-up(md) {
+      padding: 70px 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 521px;
+    width: 100%;
+  }
+
+  &__star {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+
+    @include mixins.m-media-up(md) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include mixins.m-media-up(lg) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    color: #f4f6f5;
+
+    @include mixins.m-media-up(md) {
+      font-size: 30px;
+    }
+    @include mixins.m-media-up(lg) {
+      font-size: 40px;
+    }
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #fff;
+    margin-bottom: 30px;
+    max-width: 540px;
+    width: 100%;
+
+    @include mixins.m-media-up(md) {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+}

@@ -15,6 +15,7 @@
   }
 
   &__image {
+    position: relative;
     margin-bottom: 15px;
 
     @include mixins.m-media-up(md) {
