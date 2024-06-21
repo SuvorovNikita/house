@@ -1,16 +1,17 @@
 import '@/styles/globals.scss';
-import '@/assets/fonts/Raleway/Raleway-Medium.woff2';
+import medium from '@/assets/fonts/Raleway/Raleway-Medium.woff2';
+import bold from '@/assets/fonts/Raleway/Raleway-Bold.woff2';
 
 import localFont from 'next/font/local';
 
 const fontRaleway = localFont({
   src: [
     {
-      path: '@/assets/fonts/Raleway/Raleway-Medium.woff2',
+      path: { medium },
       weight: '400',
     },
     {
-      path: './../assets/fonts/raleway/Raleway-Bold.woff2',
+      path: { bold },
       weight: '500',
     },
   ],
