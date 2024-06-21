@@ -1,4 +1,4 @@
-import '@/components/Newbies/newbies.scss';
+import '@/components/Newbies/Newbies.scss';
 import Image from 'next/image';
 import star from '@/assets/img/star.svg';
 
