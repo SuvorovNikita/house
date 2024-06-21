@@ -7,11 +7,11 @@ import avatar3 from '@/assets/img/avatar3.png';
 
 const About = () => {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="container">
         <div className="about__inner">
           <div className="about__image">
-            <Image src={img} alt="" />
+            <Image src={img} alt="" priority />
           </div>
           <div className="about__content">
             <h2 className="about__title">Наша Команда</h2>

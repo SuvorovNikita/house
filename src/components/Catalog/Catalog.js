@@ -180,7 +180,7 @@ const Catalog = () => {
   const filteredProducts = products.filter((product) => product.country === country);
 
   return (
-    <section className="catalog">
+    <section className="catalog" id="catalog">
       <div className="container">
         <div className="catalog__inner">
           <div className="catalog__top">

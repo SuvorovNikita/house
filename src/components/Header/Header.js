@@ -26,9 +26,7 @@ const Header = () => {
       <div className="container">
         <div className="header__inner">
           <div className="header__left">
-            <Link className="logo" href="#">
-              <Image src={logo} alt="Логотип" />
-            </Link>
+            <Image src={logo} alt="Логотип" className="logo" />
           </div>
           <div className="header__right">
             <nav className="nav">
