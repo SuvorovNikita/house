@@ -1,23 +1,12 @@
 import '@/styles/globals.scss';
-import medium from '@/assets/fonts/Raleway/Raleway-Medium.woff2';
-import bold from '@/assets/fonts/Raleway/Raleway-Bold.woff2';
+import { Raleway } from 'next/font/google';
 
-import localFont from 'next/font/local';
 
-const fontRaleway = localFont({
-  src: [
-    {
-      path: { medium },
-      weight: '400',
-    },
-    {
-      path: { bold },
-      weight: '500',
-    },
-  ],
 
-  variable: 'font-family-body',
-  fallback: ['sans-serif'],
+const fontRaleway = Raleway({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  variable: '--font-raleway',
 });
 
 export default function RootLayout({ children }) {
