@@ -1,4 +1,6 @@
-import Link from 'next/link';
+'use client';
+
+import { Link } from 'react-scroll';
 import Image from 'next/image';
 
 import '../Hero/Hero.scss';
@@ -26,7 +28,7 @@ const Hero = () => {
               Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения,
               доступные цены.
             </p>
-            <Link className="button" href="#">
+            <Link className="button" to="catalog" spy={true} smooth={true} duration={500}>
               Продукция
             </Link>
           </div>
