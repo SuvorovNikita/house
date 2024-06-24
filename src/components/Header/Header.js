@@ -69,22 +69,43 @@ const Header = ({ cart }) => {
                   >
                     <ul className="mobile-menu__list">
                       <li className="mobile-menu__item">
-                        <Link className="mobile-menu__link" href="#" onClick={handleMenuClose}>
+                        <Link className="mobile-menu__link" to="#" onClick={handleMenuClose}>
                           <Image src={close} alt="Закрыть меню" />
                         </Link>
                       </li>
                       <li className="mobile-menu__item">
-                        <Link className="mobile-menu__link" href="#catalog">
+                        <Link
+                          className="mobile-menu__link"
+                          to="catalog"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={handleMenuClose}
+                        >
                           Репродукции
                         </Link>
                       </li>
                       <li className="mobile-menu__item">
-                        <Link className="mobile-menu__link" href="#newbies">
+                        <Link
+                          className="mobile-menu__link"
+                          to="newbies"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={handleMenuClose}
+                        >
                           Новинки
                         </Link>
                       </li>
                       <li className="mobile-menu__item">
-                        <Link className="mobile-menu__link" href="#about">
+                        <Link
+                          className="mobile-menu__link"
+                          to="about"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={handleMenuClose}
+                        >
                           О Нас
                         </Link>
                       </li>
