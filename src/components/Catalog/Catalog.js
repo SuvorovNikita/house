@@ -183,9 +183,10 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const Catalog = () => {
+const Catalog = ({ updateCartCount }) => {
   const [country, setCountry] = useState('Франция');
   const [isMobile, setIsMobile] = useState(false);
+  const [cart, setCart] = useState([]);
 
   const handleCountryClick = (newCountry) => {
     setCountry(newCountry);
@@ -204,6 +205,11 @@ const Catalog = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const handleAddToCart = (item) => {
+    setCart([...cart, item]);
+    updateCartCount([item]);
+  };
 
   const filteredProducts = products.filter((product) => product.country === country);
 
@@ -253,6 +259,7 @@ const Catalog = () => {
                       title={product.title}
                       lithography={product.lithography}
                       price={product.price}
+                      addToCart={handleAddToCart}
                     />
                   </article>
                 ))}
@@ -269,6 +276,7 @@ const Catalog = () => {
                       title={product.title}
                       lithography={product.lithography}
                       price={product.price}
+                      addToCart={handleAddToCart}
                     />
                   </article>
                 ))}
