@@ -1,8 +1,13 @@
 'use client';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 
 import Card from '../Card/Card';
 import '../Catalog/Catalog.scss';
+
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import img01 from '@/assets/img/card/fr-1.png';
 import img02 from '@/assets/img/card/fr-2.png';
@@ -170,17 +175,40 @@ const products = [
   },
 ];
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 const Catalog = () => {
   const [country, setCountry] = useState('Франция');
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleCountryClick = (newCountry) => {
     setCountry(newCountry);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const filteredProducts = products.filter((product) => product.country === country);
 
   return (
-    <section className="catalog" id="catalog">
+    <section className="catalog" name="catalog">
       <div className="container">
         <div className="catalog__inner">
           <div className="catalog__top">
@@ -213,19 +241,39 @@ const Catalog = () => {
             </ul>
           </div>
           <div className="catalog__wrapper">
-            {filteredProducts.map((product, index) => (
-              <article className="catalog__product" key={index}>
-                <Card
-                  src={product.src}
-                  width={product.width}
-                  height={product.height}
-                  name={product.name}
-                  title={product.title}
-                  lithography={product.lithography}
-                  price={product.price}
-                />
-              </article>
-            ))}
+            {isMobile ? (
+              <Slider {...settings}>
+                {filteredProducts.map((product, index) => (
+                  <article className="catalog__product" key={index}>
+                    <Card
+                      src={product.src}
+                      width={product.width}
+                      height={product.height}
+                      name={product.name}
+                      title={product.title}
+                      lithography={product.lithography}
+                      price={product.price}
+                    />
+                  </article>
+                ))}
+              </Slider>
+            ) : (
+              <div className="catalog__wrapper">
+                {filteredProducts.map((product, index) => (
+                  <article className="catalog__product" key={index}>
+                    <Card
+                      src={product.src}
+                      width={product.width}
+                      height={product.height}
+                      name={product.name}
+                      title={product.title}
+                      lithography={product.lithography}
+                      price={product.price}
+                    />
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

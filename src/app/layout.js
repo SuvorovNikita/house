@@ -1,8 +1,6 @@
 import '@/styles/globals.scss';
 import { Raleway } from 'next/font/google';
 
-
-
 const fontRaleway = Raleway({
   weight: ['400', '500'],
   subsets: ['latin'],

@@ -1,7 +1,7 @@
 @use '../../styles/mixins.scss';
 
 .newbies {
-  padding-top: 30px;
+  // padding-top: 30px;
 
   @include mixins.m-media-up(sm) {
     padding-top: 25px;

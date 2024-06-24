@@ -7,7 +7,7 @@ import avatar3 from '@/assets/img/avatar3.png';
 
 const About = () => {
   return (
-    <section className="about" id="about">
+    <section className="about" name="about">
       <div className="container">
         <div className="about__inner">
           <div className="about__image">

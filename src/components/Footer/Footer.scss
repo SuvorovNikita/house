@@ -5,7 +5,11 @@
   background-color: var(--color-gin);
 
   &__inner {
-    display: flex;
+    display: block;
+
+    @include mixins.m-media-up(md) {
+      display: flex;
+    }
   }
 
   &__left {
@@ -28,10 +32,6 @@
       margin-right: 115px;
       margin-bottom: 0;
     }
-  }
-
-  &__inner {
-    display: flex;
   }
 
   &-phone {

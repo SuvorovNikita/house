@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-scroll';
+
 import Image from 'next/image';
 import '../Header/Header.scss';
 
@@ -32,23 +33,23 @@ const Header = () => {
             <nav className="nav">
               <ul className="list-reset nav__list">
                 <li className="nav__item">
-                  <Link href="#catalog" className="nav__link">
+                  <Link to="catalog" className="nav__link" spy={true} smooth={true} duration={500}>
                     Репродукции
                   </Link>
                 </li>
                 <li className="nav__item">
-                  <Link href="#newbies" className="nav__link">
+                  <Link to="newbies" className="nav__link" spy={true} smooth={true} duration={500}>
                     Новинки
                   </Link>
                 </li>
                 <li className="nav__item">
-                  <Link href="#about" className="nav__link">
+                  <Link to="about" className="nav__link" spy={true} smooth={true} duration={500}>
                     О нас
                   </Link>
                 </li>
               </ul>
             </nav>
-            <Link href="#" className="cart" aria-label="Переход в корзину">
+            <Link to="#" className="cart" aria-label="Переход в корзину">
               <svg
                 width="24"
                 height="24"

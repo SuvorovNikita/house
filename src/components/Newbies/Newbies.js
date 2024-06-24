@@ -4,7 +4,7 @@ import star from '@/assets/img/star.svg';
 
 const Newbies = () => {
   return (
-    <section className="newbies" id="newbies">
+    <section className="newbies" name="newbies">
       <div className="newbies__bg">
         <div className="container">
           <div className="newbies__inner">
