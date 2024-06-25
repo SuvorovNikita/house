@@ -93,12 +93,15 @@
 
       @include mixins.m-media-up(sm) {
         &:not(:last-child) {
-          margin-right: 63px;
+          margin-right: 55px;
         }
       }
 
       @include mixins.m-media-up(lg) {
         margin-bottom: 0;
+        &:not(:last-child) {
+          margin-right: 63px;
+        }
       }
     }
 
