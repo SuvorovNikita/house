@@ -177,6 +177,7 @@ const products = [
 
 const settings = {
   dots: true,
+  arrows: false,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
@@ -246,43 +247,41 @@ const Catalog = ({ updateCartCount }) => {
               </li>
             </ul>
           </div>
-          <div className="catalog__wrapper">
-            {isMobile ? (
-              <Slider {...settings}>
-                {filteredProducts.map((product, index) => (
-                  <article className="catalog__product" key={index}>
-                    <Card
-                      src={product.src}
-                      width={product.width}
-                      height={product.height}
-                      name={product.name}
-                      title={product.title}
-                      lithography={product.lithography}
-                      price={product.price}
-                      addToCart={handleAddToCart}
-                    />
-                  </article>
-                ))}
-              </Slider>
-            ) : (
-              <div className="catalog__wrapper">
-                {filteredProducts.map((product, index) => (
-                  <article className="catalog__product" key={index}>
-                    <Card
-                      src={product.src}
-                      width={product.width}
-                      height={product.height}
-                      name={product.name}
-                      title={product.title}
-                      lithography={product.lithography}
-                      price={product.price}
-                      addToCart={handleAddToCart}
-                    />
-                  </article>
-                ))}
-              </div>
-            )}
-          </div>
+          {isMobile ? (
+            <Slider {...settings}>
+              {filteredProducts.map((product, index) => (
+                <article className="catalog__product" key={index}>
+                  <Card
+                    src={product.src}
+                    width={product.width}
+                    height={product.height}
+                    name={product.name}
+                    title={product.title}
+                    lithography={product.lithography}
+                    price={product.price}
+                    addToCart={handleAddToCart}
+                  />
+                </article>
+              ))}
+            </Slider>
+          ) : (
+            <div className="catalog__wrapper">
+              {filteredProducts.map((product, index) => (
+                <article className="catalog__product" key={index}>
+                  <Card
+                    src={product.src}
+                    width={product.width}
+                    height={product.height}
+                    name={product.name}
+                    title={product.title}
+                    lithography={product.lithography}
+                    price={product.price}
+                    addToCart={handleAddToCart}
+                  />
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
